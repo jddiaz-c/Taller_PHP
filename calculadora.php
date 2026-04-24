@@ -11,20 +11,20 @@
 <form method="POST">
     <input type="hidden" name="accion" value="calcular">
 
-    <label>Número 1:</label><br>
-    <input type="number" step="any" name="num1"><br><br>
+    <label>Número 1:</label> 
+    <input type="number" step="any" name="num1">  
 
-    <label>Operación:</label><br>
+    <label>Operación:</label> 
     <select name="operacion">
         <option value="suma">Suma (+)</option>
         <option value="resta">Resta (-)</option>
         <option value="multiplicacion">Multiplicación (×)</option>
         <option value="division">División (÷)</option>
         <option value="modulo">Módulo (%)</option>
-    </select><br><br>
+    </select>  
 
-    <label>Número 2:</label><br>
-    <input type="number" step="any" name="num2"><br><br>
+    <label>Número 2:</label> 
+    <input type="number" step="any" name="num2">  
 
     <button type="submit">Calcular</button>
 </form>
@@ -119,8 +119,9 @@ if (count($_SESSION['historial']) === 0) {
 }
 ?>
 
-<br>
-<a href="./index.php">← Volver al menú</a>
+ 
+<a class="volver" href="./index.php">← Volver al menú</a>
+ 
 
 </body>
 </html>

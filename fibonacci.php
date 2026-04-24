@@ -10,15 +10,18 @@
 <h1>Fibonacci / Factorial</h1>
  
 <form method="POST">
-    <label for="numero">Ingresa un número:</label><br>
-    <input type="number" id="numero" name="numero" min="1"><br><br>
+    <label for="numero">Ingresa un número:</label>
+    <input type="number" id="numero" name="numero" min="1">
  
-    <label>Selecciona la operación:</label><br>
-    <input type="radio" id="fibonacci" name="operacion" value="fibonacci">
-    <label for="fibonacci">Fibonacci</label><br>
-    <input type="radio" id="factorial" name="operacion" value="factorial">
-    <label for="factorial">Factorial</label><br><br>
- 
+    <label>Selecciona la operación:</label>
+    <div class="radio-group">
+        <input type="radio" id="fibonacci" name="operacion" value="fibonacci">
+        <label for="fibonacci">Fibonacci</label>
+    </div>
+    <div class="radio-group">
+        <input type="radio" id="factorial" name="operacion" value="factorial">
+        <label for="factorial">Factorial</label>
+    </div>
     <button type="submit">Calcular</button>
 </form>
  
@@ -84,8 +87,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['numero']) && !empty(
 }
 ?>
  
-<br>
-<a href="./index.php">← Volver al menú</a>
+<a class="volver" href="./index.php">← Volver al menú</a>
+ 
  
 </body>
 </html>

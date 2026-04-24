@@ -10,8 +10,8 @@
 <h1>Convertir frase a acrónimo</h1>
  
 <form method="POST">
-    <label for="frase">Ingresa la frase:</label><br>
-    <input type="text" id="frase" name="frase"><br><br>
+    <label for="frase">Ingresa la frase:</label>
+    <input type="text" id="frase" name="frase">
     <button type="submit">Convertir</button>
 </form>
  
@@ -62,8 +62,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['frase'])) {
 }
 ?>
  
-<br>
-<a href="./index.php">← Volver al menú</a>
+ 
+<a class="volver" href="./index.php">← Volver al menú</a>
  
 </body>
 </html>

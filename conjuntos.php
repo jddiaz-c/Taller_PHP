@@ -10,11 +10,11 @@
 <h1>Operaciones de Conjuntos</h1>
 
 <form method="POST">
-    <label>Conjunto A (separados por comas):</label><br>
-    <input type="text" name="conjuntoA" placeholder="Ej: 1, 2, 3, 4"><br><br>
+    <label>Conjunto A (separados por comas):</label>
+    <input type="text" name="conjuntoA" placeholder="Ej: 1, 2, 3, 4"> 
 
-    <label>Conjunto B (separados por comas):</label><br>
-    <input type="text" name="conjuntoB" placeholder="Ej: 3, 4, 5, 6"><br><br>
+    <label>Conjunto B (separados por comas):</label>
+    <input type="text" name="conjuntoB" placeholder="Ej: 3, 4, 5, 6"> 
 
     <button type="submit">Calcular</button>
 </form>
@@ -101,8 +101,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['conjuntoA']) && !emp
 }
 ?>
 
-<br>
-<a href="./index.php">← Volver al menú</a>
+ 
+<a class="volver" href="./index.php">← Volver al menú</a>
+ 
 
 </body>
 </html>

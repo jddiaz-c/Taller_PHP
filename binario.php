@@ -10,8 +10,8 @@
 <h1>Convertir número entero a binario</h1>
  
 <form method="POST">
-    <label for="numero">Ingresa un número entero:</label><br>
-    <input type="number" id="numero" name="numero" min="0"><br><br>
+    <label for="numero">Ingresa un número entero:</label>
+    <input type="number" id="numero" name="numero" min="0"> 
     <button type="submit">Convertir</button>
 </form>
  
@@ -56,8 +56,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['numero']) && $_POST['
 }
 ?>
  
-<br>
-<a href="./index.php">← Volver al menú</a>
+ 
+<a class="volver" href="./index.php">← Volver al menú</a>
+ 
  
 </body>
 </html>

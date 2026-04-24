@@ -12,14 +12,14 @@
 <form method="POST">
     <p>Ingresa mínimo dos de los tres recorridos (separados por comas):</p>
 
-    <label>Preorden:</label><br>
-    <input type="text" name="preorden" placeholder="Ej: A, B, D, E, C"><br><br>
+    <label>Preorden:</label>
+    <input type="text" name="preorden" placeholder="Ej: A, B, D, E, C">
 
-    <label>Inorden:</label><br>
-    <input type="text" name="inorden" placeholder="Ej: D, B, E, A, C"><br><br>
+    <label>Inorden:</label>
+    <input type="text" name="inorden" placeholder="Ej: D, B, E, A, C">
 
-    <label>Postorden:</label><br>
-    <input type="text" name="postorden" placeholder="Ej: D, E, B, C, A"><br><br>
+    <label>Postorden:</label>
+    <input type="text" name="postorden" placeholder="Ej: D, E, B, C, A">
 
     <button type="submit">Construir árbol</button>
 </form>
@@ -127,28 +127,26 @@ class ArbolBinario {
 
         return $nodo;
     }
-    public function imprimir(?NodoArbol $nodo, string $prefijo = '', bool $esIzquierda = true): void {
-        if ($nodo === null) {
-            return;
-        }
-
-        if ($prefijo === '') {
-            echo $nodo->valor . '<br>';
-        } else {
-            echo $prefijo . ($esIzquierda ? '├── ' : '└── ') . $nodo->valor . '<br>';
-        }
-
-        $nuevoPrefijo = $prefijo . ($esIzquierda && $prefijo !== '' ? '│   ' : '    ');
-
-        if ($nodo->izquierda !== null || $nodo->derecha !== null) {
-            if ($nodo->izquierda !== null) {
-                $this->imprimir($nodo->izquierda, $nuevoPrefijo, true);
-            }
-            if ($nodo->derecha !== null) {
-                $this->imprimir($nodo->derecha, $nuevoPrefijo, false);
-            }
-        }
+   public function imprimir(?NodoArbol $nodo, string $prefijo = '', bool $esIzquierda = true, bool $esRaiz = true): void {
+    if ($nodo === null) {
+        return;
     }
+
+    if ($esRaiz) {
+        echo $nodo->valor . "\n";
+    } else {
+        echo $prefijo . ($esIzquierda ? '├── ' : '└── ') . $nodo->valor . "\n";
+    }
+
+    $nuevoPrefijo = $esRaiz ? '' : $prefijo . ($esIzquierda ? '│   ' : '    ');
+
+    if ($nodo->izquierda !== null) {
+        $this->imprimir($nodo->izquierda, $nuevoPrefijo, true, false);
+    }
+    if ($nodo->derecha !== null) {
+        $this->imprimir($nodo->derecha, $nuevoPrefijo, false, false);
+    }
+}
 }
 
 function parsear(string $entrada): array {
@@ -195,8 +193,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
-<br>
-<a href="./index.php">← Volver al menú</a>
+ 
+<a class="volver" href="./index.php">← Volver al menú</a>
+ 
 
 </body>
 </html>

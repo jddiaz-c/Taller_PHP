@@ -68,8 +68,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' || !isset($_POST['paso'])) {
     echo '
     <form method="POST">
         <input type="hidden" name="paso" value="1">
-        <label>¿Cuántos números vas a ingresar?</label><br>
-        <input type="number" name="cantidad" min="1"><br><br>
+        <label>¿Cuántos números vas a ingresar?</label>
+        <input type="number" name="cantidad" min="1"> 
         <button type="submit">Continuar</button>
     </form>';
 } else if ($_POST['paso'] === '1') {
@@ -79,8 +79,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' || !isset($_POST['paso'])) {
     echo '<input type="hidden" name="cantidad" value="' . $cantidad . '">';
 
     for ($i = 1; $i <= $cantidad; $i++) {
-        echo '<label>Número ' . $i . ':</label><br>';
-        echo '<input type="number" step="any" name="numeros[]"><br><br>';
+        echo '<label>Número ' . $i . ':</label>';
+        echo '<input type="number" step="any" name="numeros[]"> ';
     }
  
     echo '<button type="submit">Calcular</button>';
@@ -104,16 +104,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' || !isset($_POST['paso'])) {
     echo '<p>Mediana: <strong>' . $obj->mediana() . '</strong></p>';
     echo '<p>Moda: <strong>' . $modaTexto . '</strong></p>';
  
-    echo '<br><form method="POST">
+    echo ' <form method="POST">
         <input type="hidden" name="paso" value="1">
         <input type="hidden" name="cantidad" value="' . $_POST['cantidad'] . '">
-        <br><a href="estadistica.php">← Volver a ingresar números</a>
+        <a href="estadistica.php">← Volver a ingresar números</a>
     </form>';
 }
 ?>
  
-<br>
-<a href="./index.php">← Volver al menú</a>
+ 
+<a class="volver" href="./index.php">← Volver al menú</a>
+ 
  
 </body>
 </html>
